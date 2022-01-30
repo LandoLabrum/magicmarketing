@@ -1,4 +1,18 @@
-from modules.ez_env import ez_env
-
-key=ez_env("AWS_STORAGE_BUCKET_NAME")
-print(f"KEY: {key}")
+{'ip': '97.117.100.186',
+ 'geo': {'city': 'Magna',
+ 'continent_code': 'NA',
+ 'continent_name': 'North America',
+ 'country_code': 'US',
+ 'country_name': 'United States',
+ 'dma_code': 770,
+ 'is_in_european_union': False,
+ 'latitude': 40.6979,
+ 'longitude': -112.0865,
+ 'postal_code': '84044',
+ 'region': 'UT',
+ 'time_zone': 'America/Denver'},
+ 'browser': {'family': 'Chrome',
+ 'version': '97.0.4692'},
+ 'device_type': 'pc',
+ 'os': {'family': 'Mac OS X',
+ 'version': '10.15.7'}}

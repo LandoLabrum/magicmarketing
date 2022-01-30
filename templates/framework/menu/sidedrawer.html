@@ -1,35 +1,21 @@
 {% load static %}
-<script type="text/javascript" src="{% static '/js/app.js' %}"></script>
-
 <link rel="stylesheet" type="text/css" href="{% static '/css/sidedrawer.css'%}" />
 
 <div id="sidedrawer-brand" class="mui--appbar-line-height">
-    <span class="mui--text-title">Brand.io</span>
+    <span class="mui--text-title"><a href="{% url 'home' %}">Magic Marketing</a></span>
   </div>
   <div class="mui-divider"></div>
   <ul>
-    <li>
+    <a href="{% url 'blueprint' %}" class=""><strong><span class="mui--align-middle material-icons">
+      app_registration
+      </span> Register Blueprint</strong></a>
+    <!-- <li>
       <strong>Category 1</strong>
       <ul>
         <li><a href="#">Item 1</a></li>
         <li><a href="#">Item 2</a></li>
         <li><a href="#">Item 3</a></li>
       </ul>
-    </li>
-    <li>
-      <strong>Category 2</strong>
-      <ul>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2</a></li>
-        <li><a href="#">Item 3</a></li>
-      </ul>
-    </li>
-    <li>
-      <strong>Category 3</strong>
-      <ul>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2</a></li>
-        <li><a href="#">Item 3</a></li>
-      </ul>
-    </li>
+    </li> -->
+
   </ul>

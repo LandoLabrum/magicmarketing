@@ -30,7 +30,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ["ec2-13-52-98-142.us-west-1.compute.amazonaws.com"]
+ALLOWED_HOSTS = ["54.215.56.147"]
 
 
 # Application definition
@@ -70,7 +70,7 @@ STATICFILES_DIRS = (
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'templates'],
+        'DIRS': ['/home/ubuntu/magicmarketing/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,17 @@
+
+
+{% for message in messages %}
+<div class="mui-panel {{message.tags}}">
+    <div class="mui-container-fluid">
+        <div class="mui-row">
+            <div class="mui-col-xs-8">{{ message|safe }}</div>
+            <div class="mui-col-xs-4 mui--text-right">
+                <i class="material-icons remove">
+                    highlight_off
+                </i>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}

@@ -1,0 +1,295 @@
+{% extends 'framework/layout/container.html' %}
+{% block content %}
+<div class="mui--appbar-height"></div>
+<div class="mui-container-fluid">
+  {% if success != None %}
+  <div class="mui--appbar-height"></div>
+  <br>
+  <br>
+  <div class="mui--text-display3">Success!</div>
+  <br>
+  <div class="mui--text-display1">{{success.description}}</div>
+  <h3>Confirmation Code: {{success.id}}</h3>
+  <br>
+  <br>
+  <button href="{% url 'home' %}" class="mui-btn mui-btn--raised">Return Home</button>
+  {% else %}
+
+  <h1>Blueprint </h1>
+  <h4>Let us know more about your project. If you have any questions please feel free to reach out to your
+    representative.</h4>
+
+  <br />
+  <br />
+  <form class="mui-form" action="{% url 'blueprint' %}" method="POST" autocomplete="on">
+    {% csrf_token %}
+    <br />
+    <br />
+    <legend>ACCOUNT INFORMATION</legend>
+    <div class="mui-textfield">
+      <label for="id_username">{{user_form.username.label}}</label>
+      {{user_form.username}}
+    </div>
+    <div class="mui-textfield">
+      <label for="id_password1">{{user_form.password1.label}}</label>
+      {{user_form.password1}}
+    </div>
+    <div class="mui-textfield">
+      <label for="id_password2">{{user_form.password2.label}}</label>
+      {{user_form.password2}}
+    </div>
+    <br />
+    <br />
+    <legend>CONTACT INFORMATION</legend>
+    <div class="mui-textfield">
+      <label for="id_first_name">{{user_form.first_name.label}}</label>
+      {{user_form.first_name}}
+    </div>
+    <div class="mui-textfield">
+      <label for="id_last_name">{{user_form.last_name.label}}</label>
+      {{user_form.last_name}}
+    </div>
+    <div class="mui-textfield">
+      <label>Phone</label>
+      <input type="tel" id="phoneNumber" name='tel'>
+    </div>
+    <div class="mui-textfield">
+      <label for="id_email">{{user_form.email.label}}</label>
+      {{user_form.email}}
+    </div>
+    <br />
+    <br />
+    <legend>BUSINESS INFO</legend>
+    <div class="mui-textfield">
+      <label>
+        Company Legal Name
+      </label>
+      <input name='business_name' type="text" required>
+    </div>
+    <div class="mui-textfield">
+      <label>
+        Industry
+      </label>
+      <input name='industry' type="text" required>
+    </div>
+    <div class="mui-textfield">
+      <label>
+        Physical Address
+      </label>
+      <input name='address' type="text" required>
+    </div>
+    <br />
+    <br />
+    <h4>Desired URL <i>e.g. <b>www.example.com</b></i></h4>
+    <div class="mui-textfield">
+      <label>
+        1st Choice
+      </label>
+      <input name='url_1' type="text" required>
+    </div>
+    <p>If your first choice isn't available, what other URL would you choose?</p>
+    <div class="mui-textfield">
+      <label>
+        2nd Choice
+      </label>
+      <input name='url_2' type="text">
+    </div>
+    <div class="mui-textfield">
+      <label>
+        3rd Choice
+      </label>
+      <input name='url_3' type="text">
+    </div>
+    <br />
+    <br />
+    <legend >PLANS</legend>
+    <p>Choose a plan that fits your needs. This is a base-line, that will help determine the overall time and cost of your project.</p>
+    <table class="mui-table mui-table--bordered">
+      <thead>
+        <tr>
+          <th><b>Services</b></th>
+          <th class="mui--text-center">Basic</th>
+          <th class="mui--text-center">Plus</th>
+          <th class="mui--text-center">Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><small>Form Submit via Email</small></td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td><small>Default Pages</small></td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td> <small>Click-to-Contact</small></td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td><small>Social Links</small></td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td><small>Customer Reviews</small></td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td><small>fundamental E-commerce & Checkout</small></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center">x</td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td> <small>Advanced E-commerce</small></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td><small>Customer Membership Platform</small></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td> <small>Large Video & File Hosting</small></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center">x</td>
+        </tr>
+        <tr>
+          <td> <small>Customer Management Administration Tools</small></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center"></td>
+          <td class="mui--text-center">x</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+    <p>Select your desired plan.</p>
+    <div class="mui-radio">
+      <label>
+        <input type="radio" name="plan" id="optionsRadios1" value="basic" checked>
+        Basic
+      </label>
+    </div>
+    <div class="mui-radio">
+      <label>
+        <input type="radio" name="plan" id="optionsRadios1" value="plus" checked>
+        Plus
+      </label>
+    </div>
+    <div class="mui-radio">
+      <label>
+        <input type="radio" name="plan" id="optionsRadios1" value="premium" checked>
+        Premium
+      </label>
+    </div>
+<br/>
+    <legend>Additional Services</legend>
+      <p>Graphic Design</p>
+    <div class="mui-checkbox">
+      <label>
+        <input 
+        name="add_logo_design"
+        type="checkbox">
+        Logo
+      </label>
+    </div>
+    <div class="mui-checkbox">
+      <label>
+        <input 
+        name="add_branding_design"
+        type="checkbox">
+        Branding Design
+      </label>
+    </div>
+    <br/>
+    <b>Production & Image Campaigns</b>
+    <div class="mui-checkbox">
+      <label>
+        <input 
+        name="add_video_campaign"
+        type="checkbox">
+        Production Grade Video Campaigns
+      </label>
+    </div>
+    <div class="mui-checkbox">
+      <label>
+        <input 
+        name="add_photo_campaign"
+        type="checkbox">
+        Professional Photography Assets
+      </label>
+    </div>
+    <br/>
+    
+    <b>Social</b>
+    <div class="mui-checkbox">
+      <label>
+        <input 
+        name="add_social_managment"
+        type="checkbox">
+        Managment
+      </label>
+    </div>
+    <div class="mui-checkbox">
+      <label>
+        <input 
+        name="add_social_automation"
+        type="checkbox">
+        Automation
+      </label>
+    </div>
+    <div class="mui-checkbox">
+      <label>
+        <input 
+        name="add_social_engineering"
+        type="checkbox">
+        Prospecting
+      </label>
+    </div>
+
+    <!--     
+    <div class="mui-textfield mui-textfield--float-label">
+      <input type="email" required>
+      <label>Required Email Address</label>
+    </div>
+    <div class="mui-textfield mui-textfield--float-label">
+      <textarea required></textarea>
+      <label>Required Textarea</label>
+    </div>
+    <div class="mui-textfield mui-textfield--float-label">
+      <input type="email" >
+      <label>Email Address</label>
+    </div> -->
+    <br/>
+    <br/>
+    <!-- <div class="mui-checkbox">
+      <label>
+        <input 
+        name="add_social_managment"
+        type="checkbox">
+        Managment
+      </label>
+    </div> -->
+    <button style="width: 100%" type="submit" class="mui-btn mui-btn--raised mui-btn--primary">Submit</button>
+  </form>
+  {% endif %}
+</div>
+{% endblock %}

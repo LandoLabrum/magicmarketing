@@ -16,8 +16,60 @@
    -moz-osx-font-smoothing: grayscale;
    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
  }
- 
- 
+ :focus, a:hover {
+  text-decoration: none !important;
+  opacity: .8
+}
+:root {
+  --layout-max-width: 1600px;
+  --grid-column-count: 12;
+  --grid-gutters: 60px;
+  --spacing-unit: 0.5rem;
+  --section-spacing: calc(10 * 0.5rem);
+  --transition-quick: 50ms;
+  --transition-fast: 150ms;
+  --transition-medium: 300ms;
+  --transition-long: 450ms;
+  --transition-extra-long: 800ms;
+  --color-base: #0B2436;
+  --color-gold: #D5B795;
+  --color-blue: #A7CEEF;
+  --color-green: #ACB5AC;
+  --color-lavender: #B8BBD3;
+  --color-red: #C9A3A4;
+  --color-white: white;
+  --color-light-gray: #BBBFBF;
+  --color-lighter-gray: #F2F7F7;
+  --color-gray: #858686;
+  --color-black: #2E2E2E;
+  --color-bg-dark: var(--color-black);
+  --color-bg-light: var(--color-lighter-gray);
+  --color-type-dark: var(--color-black);
+  --color-type-base: var(--color-base);
+  --color-type-light: var(--color-gray);
+  --color-type-white: var(--color-white);
+  --font-primary: "Untitled Sans",Helvetica,Arial,sans-serif;
+  --font-secondary: "Tiempos Headline","Times","Georgia",serif;
+  --font-tertiary: "DIN",Helvetica,Arial,sans-serif;
+  --font-quaternary: "Sohne Mono Buch",Helvetica,Arial,sans-serif;
+  --font-primary-weight-regular: 400;
+  --font-primary-weight-medium: 500;
+  --font-secondary-weight-light: 300;
+  --font-secondary-weight-regular: 400;
+  --font-tertiary-weight-medium: 500;
+  --font-quaternary-weight-medium: 500;
+}
+ul.errorlist {
+  list-style: none !important
+}
+.error{
+  color: var(--color-white);
+  background-color: var(--color-red) !important;
+}
+.success{
+  color: var(--color-white);
+  background-color: var(--color-green) !important;
+}
  /**
   * Layout CSS
   */
