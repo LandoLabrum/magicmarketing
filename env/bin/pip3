@@ -1,4 +1,4 @@
-#!/Users/lando/Desktop/Work/clients/nick_brocco/site/magicmarketing/env/bin/python3.9
+#!/home/ubuntu/magicmarketing/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

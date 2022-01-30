@@ -30,7 +30,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ec2-13-52-98-142.us-west-1.compute.amazonaws.com"]
 
 
 # Application definition
@@ -60,11 +60,17 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'magicmarketing.urls'
+STATIC_URL = '/static/'
+MEDIA_URL = '/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,4 +152,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # MODULES
 GEOIP_PATH = os.path.join(BASE_DIR, 'modules/ez_target/network/geoip')
-print(f"GEO: {GEOIP_PATH}")
+# print(f"GEO: {GEOIP_PATH}")
